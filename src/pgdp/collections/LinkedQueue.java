@@ -1,13 +1,23 @@
 package pgdp.collections;
 
-public abstract class LinkedQueue implements Queue{
+public abstract class LinkedQueue<T> implements Queue<T> {
     @Override
-    public void enqueue() {
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public void enqueue(T obj) {
 
     }
 
     @Override
-    public Object dequeue() {
+    public T dequeue() {
         return null;
     }
 }

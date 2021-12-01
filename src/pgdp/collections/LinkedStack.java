@@ -1,14 +1,25 @@
 package pgdp.collections;
 
-public abstract class LinkedStack implements Stack {
+public abstract class LinkedStack<T> implements Stack<T> {
+
 
     @Override
-    public void push() {
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public void push(T obj) {
 
     }
 
     @Override
-    public Object pop() {
+    public T pop() {
         return null;
     }
 }
