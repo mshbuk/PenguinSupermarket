@@ -16,38 +16,23 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public void enqueue(T obj) {
-        if(isEmpty()) current = new List<>(obj,null);
-        else{
+        if (isEmpty()) current = new List<>(obj, null);
+        else {
             List<T> temp = current;
-            while(temp.getNext() != null){
+            while (temp.getNext() != null) {
                 temp = temp.getNext();
             }
             temp.insert(obj);
         }
-        count++;
-
-
-
+        count = count + 1;
     }
-
-
-    /*List<T> newList = new List<T>(obj);
-        if (this.first == null) {
-            this.first = this.last = newList;
-        }
-        List<T> beforeFirst = this.first.getNext();
-        beforeFirst = newList;
-        this.first = newList;*/
-
 
     @Override
     public T dequeue() {
-        // T result = first.getInfo();
-       // if(last == first) last = null;
-        if(current == null)return null;
+        if (current == null) return null;
         T result = current.getInfo();
         current = current.getNext();
-        count--;
+        count = count - 1;
         return result;
     }
 }
