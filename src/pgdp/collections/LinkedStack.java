@@ -1,13 +1,14 @@
 package pgdp.collections;
 
-public abstract class LinkedStack<T> implements Stack<T> {
-    private  List<T> node;
-   // private final T list;
+public class LinkedStack<T> implements Stack<T> {
+    private List<T> node;
+    private int count;
+    // private final T list;
 
 
     @Override
     public int size() {
-        return 0;
+        return count;
     }
 
     @Override
@@ -18,18 +19,21 @@ public abstract class LinkedStack<T> implements Stack<T> {
 
     @Override
     public void push(T obj) {
-
-
+        node = new List<>(obj, node);
+        count++;
     }
 
     @Override
     public T pop() {
-        if(this.isEmpty())return null;
-        T result = node.getInfo();
+        if (this.isEmpty()) return null;
+        T top = node.getInfo();
         node = node.getNext();
-        return result;
-       //   T result = list.info;
-       //  list = list.next;
-       // return result;
+        count--;
+        return top;
+        //addElement(T obj); return obj;
+
+        //   T result = list.info;
+        //  list = list.next;
+        // return result;
     }
 }

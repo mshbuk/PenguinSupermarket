@@ -1,6 +1,6 @@
 package pgdp.collections;
 
-public abstract class LinkedQueue<T> implements Queue<T> {
+public class LinkedQueue<T> implements Queue<T> {
     @Override
     public int size() {
         return 0;
