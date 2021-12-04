@@ -22,5 +22,6 @@ public class QueueConnector<T> implements DataStructureConnector<T> {
     public T removeNextElement() {
         if(!hasNextElement())return null;
         else return queue.dequeue();
+        
     }
 }
