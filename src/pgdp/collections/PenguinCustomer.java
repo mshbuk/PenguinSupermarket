@@ -1,7 +1,7 @@
 package pgdp.collections;
 
 public class PenguinCustomer {
-    private String name;
+/*    private String name;
     private int availableMoney;
     private final Stack<FishyProduct> productsInTheCart;
 
@@ -46,5 +46,5 @@ public class PenguinCustomer {
     @Override
     public String toString() {
         return "PenguinCustomer " + name + ", " + availableMoney + ", " + productsInTheCart;
-    }
+    }*/
 }
