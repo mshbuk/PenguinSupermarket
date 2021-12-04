@@ -13,8 +13,10 @@ public class FishyProduct {
     }
 
     public FishyProduct(final String name, final int price) {
-        if(name != null) this.name = name;
-        if(price > 0) this.price = price;
+        if(name != null || price > 0) {
+            this.name = name;
+            this.price = price;
+        }
 
     }
 
