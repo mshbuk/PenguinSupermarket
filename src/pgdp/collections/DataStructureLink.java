@@ -10,13 +10,13 @@ public class DataStructureLink<T> {
     }
 
     public boolean moveNextFromAToB() {
-      //  if(!A.hasNextElement()) return false;
-    //    else {
-     //       T obj = A.removeNextElement();
-      //      B.addElement(obj);
-     //       return true;
-    //    }
-        return false;}
+        if(!A.hasNextElement()) return false;
+        else {
+           T obj = A.removeNextElement();
+           B.addElement(obj);
+           return true;
+       }
+    }
     public void moveAllFromAToB() {
    // while(!(A.hasNextElement())) {
      //   T obj = A.removeNextElement();
