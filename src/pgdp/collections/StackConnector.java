@@ -20,7 +20,7 @@ public class StackConnector<T> implements DataStructureConnector<T> {
 
     @Override
     public T removeNextElement() {
-        if(stack.isEmpty()) return null;
+        if(!(hasNextElement())) return null;
         else return stack.pop();
     }
 }
