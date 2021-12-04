@@ -18,9 +18,9 @@ public class DataStructureLink<T> {
        }
     }
     public void moveAllFromAToB() {
-   // while(!(A.hasNextElement())) {
-     //   T obj = A.removeNextElement();
-     //   B.addElement(obj);
-   // }
+    while((A.hasNextElement())) {
+        T obj = A.removeNextElement();
+       B.addElement(obj);
+    }
     }
 }
