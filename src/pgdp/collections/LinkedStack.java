@@ -26,10 +26,12 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (this.isEmpty()) return null;
-        T top = node.getInfo();
-        node = node.getNext();
-        count--;
-        return top;
+        else {
+            T top = node.getInfo();
+            node = node.getNext();
+            count--;
+            return top;
+        }
         //addElement(T obj); return obj;
 
         //   T result = list.info;
