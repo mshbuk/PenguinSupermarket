@@ -21,9 +21,9 @@ public class FishyProduct {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("new FishyProduct (");
+        builder.append("new FishyProduct (" + '"');
         builder.append(getName()).append(", ");
-        builder.append(getPrice()).append(")");
+        builder.append(getPrice()).append('"' + ")");
         return super.toString();
     }
 }
