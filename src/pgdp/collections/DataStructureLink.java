@@ -18,7 +18,9 @@ public class DataStructureLink<T> {
         }
     }
     public void moveAllFromAToB() {
-
+    while(!(A.isEmpty())) {
+        T object = A.pop();
+        B.enqueue(object);
     }
-
+    }
 }
