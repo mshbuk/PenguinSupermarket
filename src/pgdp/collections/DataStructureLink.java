@@ -1,5 +1,5 @@
 package pgdp.collections;
-
+/*
 public class DataStructureLink<T> {
     private DataStructureConnector<T> A;
     private DataStructureConnector<T> B;
@@ -23,4 +23,4 @@ public class DataStructureLink<T> {
         B.addElement(obj);
     }
     }
-}
+}*/
