@@ -16,7 +16,7 @@ public class LinkedQueue<T> implements Queue<T> {
 
     @Override
     public void enqueue(T obj) {
-        if (isEmpty()) current = new List<>(obj, null);
+        if (isEmpty()) current.insert(obj);
         else {
             List<T> temp = current;
             while (temp.getNext() != null) {
