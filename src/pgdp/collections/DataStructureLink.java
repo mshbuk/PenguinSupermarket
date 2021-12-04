@@ -5,8 +5,8 @@ public class DataStructureLink<T> {
     private DataStructureConnector<T> B;
 
     public DataStructureLink(DataStructureConnector<T> A,DataStructureConnector<T> B) {
-       // this.A = A;
-      //  this.B = B;
+        this.A = A;
+        this.B = B;
     }
 
     public boolean moveNextFromAToB() {
