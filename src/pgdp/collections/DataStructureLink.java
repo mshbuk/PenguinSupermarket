@@ -1,26 +1,26 @@
 package pgdp.collections;
 
 public class DataStructureLink<T> {
-    private Stack<T> A;
-    private Queue<T> B;
+    private DataStructureConnector<T> A;
+    private DataStructureConnector<T> B;
 
-    public DataStructureLink(Stack<T> stack, Queue<T> queue) {
-        this.A = stack;
-        this.B = queue;
+    public DataStructureLink(DataStructureConnector<T> A,DataStructureConnector<T> B) {
+        this.A = A;
+        this.B = B;
     }
 
     public boolean moveNextFromAToB() {
-        if(A.isEmpty()) return false;
+        if(A.hasNextElement()) return false;
         else {
-            T object = A.pop();
-            B.enqueue(object);
+            T obj = A.removeNextElement();
+            B.addElement(obj);
             return true;
         }
     }
     public void moveAllFromAToB() {
-    while(!(A.isEmpty())) {
-        T object = A.pop();
-        B.enqueue(object);
+    while(!(A.hasNextElement())) {
+        T obj = A.removeNextElement();
+        B.addElement(obj);
     }
     }
 }
