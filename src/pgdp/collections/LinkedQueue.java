@@ -34,6 +34,6 @@ public class LinkedQueue<T> implements Queue<T> {
         current = current.getNext();
         count = count - 1;
         return result;
-         
+
     }
 }
