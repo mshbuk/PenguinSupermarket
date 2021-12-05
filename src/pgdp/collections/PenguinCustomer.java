@@ -3,7 +3,7 @@ package pgdp.collections;
 public class PenguinCustomer {
     private String name;
     private int money;
-    private Stack<FishyProduct> products;
+    private final Stack<FishyProduct> products;
 
 
     public String getName() {
@@ -18,10 +18,10 @@ public class PenguinCustomer {
         return products;
     }
 
-    public PenguinCustomer(final String name, int availableMoney, Stack<FishyProduct> productsInTheCart) {
+    public PenguinCustomer(final String name, int money, final Stack<FishyProduct> products) {
+        this.products = products;
         if (name != null) this.name = name;
-        if (availableMoney > 0) this.money = availableMoney;
-        this.products = productsInTheCart;
+        if (money > 0) this.money = money;
     }
 
     public void addProductToBasket(FishyProduct item) {
@@ -44,7 +44,7 @@ public class PenguinCustomer {
     }
 
     public void pay(int price) {
-        if (price > 0 && money > 0)
+        if (price > 0 && money > 0 && money >= price)
             money = money - price;
     }
 
