@@ -3,7 +3,7 @@ package pgdp.collections;
 public class PenguinCustomer {
     private String name;
     private int money;
-    private final Stack<FishyProduct> products;
+    private Stack<FishyProduct> products;
 
 
     public String getName() {
@@ -18,7 +18,7 @@ public class PenguinCustomer {
         return products;
     }
 
-    public PenguinCustomer(final String name, int money, final Stack<FishyProduct> products) {
+    public PenguinCustomer(final String name, int money, Stack<FishyProduct> products) {
         this.products = products;
         if (name != null) this.name = name;
         if (money > 0) this.money = money;
@@ -33,7 +33,6 @@ public class PenguinCustomer {
         StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
         DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(stackCart,queueBand);
         newBand.moveAllFromAToB();
-
     }
 
     public void takeAllProductsFromBand(Queue<FishyProduct> band) {
@@ -43,10 +42,9 @@ public class PenguinCustomer {
         newBand.moveAllFromAToB();
     }
 
-    public int pay(int price) {
-        if (price > 0 && money > 0 && money >= price)
+    public void pay(int price) {
+        if (money >= 0 && price >= 0 && money >= price)
             money = money - price;
-        return money;
     }
 
     @Override
