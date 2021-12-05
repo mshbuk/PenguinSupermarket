@@ -29,19 +29,22 @@ public class PenguinCustomer {
 
     public void placeAllProductsOnBand(Queue<FishyProduct> band) {
     while(!(productsInTheCart.isEmpty())) {
-         band.enqueue(productsInTheCart.pop());
+        FishyProduct item = productsInTheCart.pop();
+         band.enqueue(item);
     }
     }
 
     public void takeAllProductsFromBand(Queue<FishyProduct> band) {
-        while(productsInTheCart.isEmpty()) band.dequeue();
+        while(!band.isEmpty()) {
+            FishyProduct item = band.dequeue();
+            productsInTheCart.push(item);
+        }
     }
 
     public void pay(int price) {
         if(price > 0 && availableMoney > 0)
     availableMoney = availableMoney - price;
     }
-
 
     @Override
     public String toString() {
