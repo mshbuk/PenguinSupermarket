@@ -43,9 +43,10 @@ public class PenguinCustomer {
         newBand.moveAllFromAToB();
     }
 
-    public void pay(int price) {
+    public int pay(int price) {
         if (price > 0 && money > 0 && money >= price)
             money = money - price;
+        return money;
     }
 
     @Override
