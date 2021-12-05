@@ -30,7 +30,6 @@ public class PenguinCustomer {
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> band) {
-
         QueueConnector<FishyProduct> queueBand = new QueueConnector<>(band);
         StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
         DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(stackCart, queueBand);
