@@ -18,7 +18,7 @@ public class PenguinCustomer {
         return products;
     }
 
-    public PenguinCustomer(final String name, int money) {
+    public PenguinCustomer( String name, int money) {
         if(name == null || money < 0)
             ExceptionUtil.illegalArgument("Not allowed");
          this.name = name;
