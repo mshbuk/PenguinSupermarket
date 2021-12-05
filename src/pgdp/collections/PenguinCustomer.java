@@ -29,29 +29,27 @@ public class PenguinCustomer {
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> band) {
-        DataStructureLink<FishyProduct> newBand;
-        //while(!(productsInTheCart.isEmpty())) {
-        //   FishyProduct item = productsInTheCart.pop();
-        //   band.enqueue(item);
-        //}
+        QueueConnector<FishyProduct> queueBand = new QueueConnector<>(band);
+        StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
+        DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(stackCart,queueBand);
+        newBand.moveAllFromAToB();
+
     }
 
     public void takeAllProductsFromBand(Queue<FishyProduct> band) {
-        //  while(!band.isEmpty()) {
-        //     FishyProduct item = band.dequeue();
-       // productsInTheCart.push(item);
+        QueueConnector<FishyProduct> queueBand = new QueueConnector<>(band);
+        StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
+        DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(queueBand, stackCart);
+        newBand.moveAllFromAToB();
     }
 
-
-
-    public int pay(int price) {
+    public void pay(int price) {
         if (price > 0 && money > 0)
             money = money - price;
-        return money;
     }
 
     @Override
     public String toString() {
-        return "PenguinCustomer " + name + ", " + money + ", " + products;
+        return "new PenguinCustomer (" + '"' + name + '"' + ", " + money + ", " + products + ")";
     }
 }
