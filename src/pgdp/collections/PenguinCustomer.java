@@ -3,7 +3,7 @@ package pgdp.collections;
 public class PenguinCustomer {
     private final String name;
     private int money;
-    private Stack<FishyProduct> products;
+    private Stack<FishyProduct> products = new LinkedStack<>();
 
 
     public String getName() {
@@ -18,11 +18,11 @@ public class PenguinCustomer {
         return products;
     }
 
-    public PenguinCustomer( String name, int money) {
-        if(name == null || money < 0)
+    public PenguinCustomer(String name, int money) {
+        if (name == null || money < 0)
             ExceptionUtil.illegalArgument("Not allowed");
-         this.name = name;
-         this.money = money;
+        this.name = name;
+        this.money = money;
     }
 
     public void addProductToBasket(FishyProduct item) {
@@ -30,9 +30,10 @@ public class PenguinCustomer {
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> band) {
+
         QueueConnector<FishyProduct> queueBand = new QueueConnector<>(band);
         StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
-        DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(stackCart,queueBand);
+        DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(stackCart, queueBand);
         newBand.moveAllFromAToB();
     }
 
