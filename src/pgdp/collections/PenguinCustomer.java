@@ -1,7 +1,7 @@
 package pgdp.collections;
 
 public class PenguinCustomer {
-    private String name;
+    private final String name;
     private int money;
     private Stack<FishyProduct> products;
 
@@ -18,10 +18,11 @@ public class PenguinCustomer {
         return products;
     }
 
-    public PenguinCustomer(final String name, int money, Stack<FishyProduct> products) {
-        this.products = products;
-        if (name != null) this.name = name;
-        if (money > 0) this.money = money;
+    public PenguinCustomer(final String name, int money) {
+        if(name == null || money < 0)
+            ExceptionUtil.illegalArgument("Not allowed");
+         this.name = name;
+         this.money = money;
     }
 
     public void addProductToBasket(FishyProduct item) {
