@@ -44,9 +44,10 @@ public class PenguinCustomer {
 
 
 
-    public void pay(int price) {
+    public int pay(int price) {
         if (price > 0 && money > 0)
             money = money - price;
+        return money;
     }
 
     @Override
