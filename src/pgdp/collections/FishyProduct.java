@@ -1,7 +1,7 @@
 package pgdp.collections;
 
 public class FishyProduct {
-    private String name;
+    private final String name;
     private int price;
 
     public String getName() {
@@ -12,8 +12,8 @@ public class FishyProduct {
         return price;
     }
 
-    public FishyProduct(final String name, final int price) {
-        if(name == null || price < 0)
+    public FishyProduct(String name, int price) {
+        if(name == null || price <= 0)
             ExceptionUtil.illegalArgument("Not allowed");
             this.name = name;
             this.price = price;
