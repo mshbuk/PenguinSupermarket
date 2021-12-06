@@ -5,7 +5,6 @@ public class PenguinCustomer {
     private int money;
     private Stack<FishyProduct> products = new LinkedStack<>();
 
-
     public String getName() {
         return name;
     }
@@ -30,22 +29,24 @@ public class PenguinCustomer {
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> band) {
-        QueueConnector<FishyProduct> queueBand = new QueueConnector<>(band);
-        StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
+        DataStructureConnector<FishyProduct> queueBand = new QueueConnector<>(band);
+        DataStructureConnector<FishyProduct> stackCart = new StackConnector<>(products);
         DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(stackCart, queueBand);
         newBand.moveAllFromAToB();
     }
 
     public void takeAllProductsFromBand(Queue<FishyProduct> band) {
-        QueueConnector<FishyProduct> queueBand = new QueueConnector<>(band);
-        StackConnector<FishyProduct> stackCart = new StackConnector<>(products);
+        DataStructureConnector<FishyProduct> queueBand = new QueueConnector<>(band);
+        DataStructureConnector<FishyProduct> stackCart = new StackConnector<>(products);
         DataStructureLink<FishyProduct> newBand = new DataStructureLink<>(queueBand, stackCart);
         newBand.moveAllFromAToB();
     }
 
     public void pay(int price) {
-        if (money < 0 && price <= 0 && money < price)ExceptionUtil.illegalArgument("Not allowed");
-            money = money - price;
+        if (money < 0 && price <= 0 && money < price) {
+            ExceptionUtil.illegalArgument("Not allowed");
+        }
+        money = money - price;
     }
 
     @Override
