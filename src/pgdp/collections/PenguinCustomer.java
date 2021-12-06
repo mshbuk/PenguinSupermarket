@@ -44,7 +44,7 @@ public class PenguinCustomer {
     }
 
     public void pay(int price) {
-        if (money < 0 && price < 0 && money < price)ExceptionUtil.illegalArgument("Not allowed");
+        if (money < 0 && price <= 0 && money < price)ExceptionUtil.illegalArgument("Not allowed");
             money = money - price;
     }
 
