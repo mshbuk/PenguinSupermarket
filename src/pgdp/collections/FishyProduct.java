@@ -13,15 +13,16 @@ public class FishyProduct {
     }
 
     public FishyProduct(String name, int price) {
-        if(name == null || price <= 0)
+        if (name == null || price <= 0) {
             ExceptionUtil.illegalArgument("Not allowed");
-            this.name = name;
-            this.price = price;
+        }
+        this.name = name;
+        this.price = price;
 
     }
 
     @Override
     public String toString() {
-       return "new FishyProduct (" + '"' + getName() + ", " + getPrice() + '"' + ")";
+        return "new FishyProduct (" + '"' + getName() + ", " + getPrice() + '"' + ")";
     }
 }
