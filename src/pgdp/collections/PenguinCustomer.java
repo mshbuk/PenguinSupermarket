@@ -51,6 +51,6 @@ public class PenguinCustomer {
 
     @Override
     public String toString() {
-        return "new PenguinCustomer (" + '"' + name + '"' + ", " + money + ")";
+        return "new PenguinCustomer (" + '"' + getName() + '"' + ", " + getMoney() + ")";
     }
 }
