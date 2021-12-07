@@ -28,6 +28,15 @@ public class PenguinSupermarket {
                 secondLine = checkouts[jndex].queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
                 if (realSmallest > smallestLine) realSmallest = smallestLine;
+            }
+
+
+        }
+        for (Checkout checkout : checkouts) {
+            if (checkout.queueLength() == realSmallest) smallest = checkout;
+
+        }
+        return smallest;
 
 
 
