@@ -73,6 +73,9 @@ public class PenguinSupermarket {
     }
 
     public void serveCustomers() {
+        for (int i = 0; i < checkouts.length; i++) {
+            checkouts[i].serveNextCustomer();
+        }
     }
 
 }
