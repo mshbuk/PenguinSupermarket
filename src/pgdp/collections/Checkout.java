@@ -39,10 +39,6 @@ public class Checkout {
                 int price = item.getPrice();
                 receipt = receipt + price;
                 bandAfterCashier.enqueue(item);
-
-                if (larisa.getMoney() < receipt) {
-                    ExceptionUtil.illegalArgument("Not allowed");
-                }
             }
             larisa.pay(receipt);
             larisa.takeAllProductsFromBand(bandAfterCashier);
