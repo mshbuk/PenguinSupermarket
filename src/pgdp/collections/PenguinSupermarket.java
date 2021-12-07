@@ -38,6 +38,18 @@ public class PenguinSupermarket {
 
 
     public void closeCheckout(int index) {
+        Checkout closedRegister = checkouts[index];
+        int newLengthOfRegisters = checkouts.length - 1;
+        Checkout[] openRegisters = new Checkout[newLengthOfRegisters];
+        for(int i = 0; i < checkouts.length; i++) {
+            if(i < index) {
+                openRegisters[i] = checkouts[i];
+            }
+            else if(i > index) {
+                openRegisters[i - 1] = checkouts[i];
+            }
+        }
+
     }
 
     public void serveCustomers() {
