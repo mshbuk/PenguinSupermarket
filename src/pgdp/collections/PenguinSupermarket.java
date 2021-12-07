@@ -26,7 +26,7 @@ public class PenguinSupermarket {
             }
         }
         int j = 0;
-        while(openRegisters[j].queueLength() <= smallestQueueLength) {
+        while(openRegisters[j].queueLength() < smallestQueueLength) {
             j++;
         }
         return openRegisters[j];
