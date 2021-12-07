@@ -18,8 +18,9 @@ public class PenguinCustomer {
     }
 
     public PenguinCustomer(String name, int money) {
-        if (name == null || money < 0)
+        if (name == null || money < 0) {
             ExceptionUtil.illegalArgument("Not allowed");
+        }
         this.name = name;
         this.money = money;
     }
@@ -43,7 +44,7 @@ public class PenguinCustomer {
     }
 
     public void pay(int price) {
-        if (price < 0 && money < price) {
+        if (price < 0 || money < price) {
             ExceptionUtil.illegalArgument("Not allowed");
         }
         money = money - price;
