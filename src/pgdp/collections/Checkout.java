@@ -38,13 +38,13 @@ public class Checkout {
                 FishyProduct item = bandBeforeCashier.dequeue();
                 int price = item.getPrice();
                 receipt = receipt + price;
-                larisa.pay(price);
                 bandAfterCashier.enqueue(item);
 
                 if (larisa.getMoney() < receipt) {
                     ExceptionUtil.illegalArgument("Not allowed");
                 }
             }
+            larisa.pay(receipt);
             larisa.takeAllProductsFromBand(bandAfterCashier);
         }
     }
