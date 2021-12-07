@@ -50,6 +50,10 @@ public class PenguinCustomer {
         money = money - price;
     }
 
+    public void goToCheckout(PenguinSupermarket smallestQueue) {
+    smallestQueue.getCheckoutWithSmallestQueue().getQueue().enqueue(this);
+    }
+
     @Override
     public String toString() {
         return "new PenguinCustomer (" + '"' + getName() + '"' + ", " + getMoney() + ")";
