@@ -38,7 +38,7 @@ public class Checkout {
            FishyProduct item = bandBeforeCashier.dequeue();
            int priceOfTheItem = receipt + item.getPrice();
            larisa.pay(priceOfTheItem);
-           bandAfterCashier.enqueue(item);;
+           bandAfterCashier.enqueue(item);
 
            if(larisa.getMoney() < receipt) {
                ExceptionUtil.illegalArgument("Not allowed");

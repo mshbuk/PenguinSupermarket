@@ -2,7 +2,7 @@ package pgdp.collections;
 
 public class FishyProduct {
     private final String name;
-    private int price;
+    private final int price;
 
     public String getName() {
         return name;
