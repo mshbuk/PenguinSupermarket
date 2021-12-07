@@ -11,7 +11,12 @@ public class PenguinSupermarket {
         if(freeRegisters <= 0) {
             ExceptionUtil.illegalArgument("Not allowed");
         }
+        int i = 0;
         this.checkouts = new Checkout[freeRegisters];
+        while(i < freeRegisters) {
+            checkouts[i] = new Checkout();
+            i = i + 1;
+        }
     }
 
     public Checkout getCheckoutWithSmallestQueue() {
@@ -25,7 +30,7 @@ public class PenguinSupermarket {
 
         int j = 0;
         while(checkouts[j].queueLength() != smallestQueueLength) {
-            j++;
+            j = j + 1;
         }
 
         return checkouts[j];
