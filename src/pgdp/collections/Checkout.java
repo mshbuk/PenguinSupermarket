@@ -1,6 +1,6 @@
 package pgdp.collections;
 
-/*public class Checkout {
+public class Checkout {
     private final Queue<PenguinCustomer> queue;
     private final Queue<FishyProduct> bandBeforeCashier;
     private final Queue<FishyProduct> bandAfterCashier;
@@ -48,4 +48,4 @@ package pgdp.collections;
             larisa.takeAllProductsFromBand(bandAfterCashier);
         }
     }
-}*/
+}
