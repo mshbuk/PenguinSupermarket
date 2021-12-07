@@ -23,6 +23,6 @@ public class FishyProduct {
 
     @Override
     public String toString() {
-        return "new FishyProduct (" + '"' + getName() + ", " + getPrice() + '"' + ")";
+        return "new FishyProduct (" + '"' + getName() + ", " + getPrice() + ")";
     }
 }
