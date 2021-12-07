@@ -2,6 +2,11 @@ package pgdp.collections;
 
 public class Main {
     public static void main(String[] args) {
+       // PenguinCustomer larisa;
+        //int[] openRegisters;
+        //openRegisters = new int[]{3,6,2};
+
+
 
 
 
