@@ -28,28 +28,24 @@ public class Checkout {
         return queue.size();
     }
 
-    public void serveNextCustomer(){
-    if(!queue.isEmpty()) {
-       PenguinCustomer larisa = queue.dequeue();
-       larisa.placeAllProductsOnBand(bandBeforeCashier);
+    public void serveNextCustomer() {
+        if (!queue.isEmpty()) {
+            PenguinCustomer larisa = queue.dequeue();
+            larisa.placeAllProductsOnBand(bandBeforeCashier);
 
-       int receipt = 0;
-        while(!(bandBeforeCashier.size() == 0)) {
-           FishyProduct item = bandBeforeCashier.dequeue();
-           int priceOfTheItem = receipt + item.getPrice();
-           larisa.pay(priceOfTheItem);
-           bandAfterCashier.enqueue(item);
+            int receipt = 0;
+            while (!(bandBeforeCashier.size() == 0)) {
+                FishyProduct item = bandBeforeCashier.dequeue();
+                int price = item.getPrice();
+                receipt = receipt + price;
+                larisa.pay(price);
+                bandAfterCashier.enqueue(item);
 
-           if(larisa.getMoney() < receipt) {
-               ExceptionUtil.illegalArgument("Not allowed");
-           }
-       }
-       larisa.takeAllProductsFromBand(bandAfterCashier);
-    }
-
-
-
-
-
+                if (larisa.getMoney() < receipt) {
+                    ExceptionUtil.illegalArgument("Not allowed");
+                }
+            }
+            larisa.takeAllProductsFromBand(bandAfterCashier);
+        }
     }
 }
