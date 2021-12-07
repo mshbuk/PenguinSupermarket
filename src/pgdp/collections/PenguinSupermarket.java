@@ -1,34 +1,34 @@
 package pgdp.collections;
 
 public class PenguinSupermarket {
-    private final Checkout[] checkout;
+    private final Checkout[] checkouts;
 
-    public Checkout[] getCheckout() {
-        return checkout;
+    public Checkout[] getCheckouts() {
+        return checkouts;
     }
 
     public PenguinSupermarket(int freeRegisters) {
         if(freeRegisters <= 0) {
             ExceptionUtil.illegalArgument("Not allowed");
         }
-        this.checkout = new Checkout[freeRegisters];
+        this.checkouts = new Checkout[freeRegisters];
     }
 
     public Checkout getCheckoutWithSmallestQueue() {
-        int smallestQueueLength = checkout[0].queueLength();
+        int smallestQueueLength = checkouts[0].queueLength();
 
-        for (int i = 0; i < checkout.length; i++) {
-            if(smallestQueueLength > checkout[i].queueLength()) {
-                smallestQueueLength = checkout[i].queueLength();
+        for (int i = 0; i < checkouts.length; i++) {
+            if(smallestQueueLength > checkouts[i].queueLength()) {
+                smallestQueueLength = checkouts[i].queueLength();
             }
         }
 
         int j = 0;
-        while(checkout[j].queueLength() != smallestQueueLength) {
+        while(checkouts[j].queueLength() != smallestQueueLength) {
             j++;
         }
 
-        return checkout[j];
+        return checkouts[j];
     }
 
 
